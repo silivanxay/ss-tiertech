@@ -672,9 +672,9 @@ p { color: var(--gray-600); }
 /* Pricing Section */
 .pricing-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -734,6 +734,41 @@ p { color: var(--gray-600); }
     font-size: 1rem;
     font-weight: 400;
     color: var(--gray-600);
+}
+
+.pricing-daily {
+    font-size: 0.9rem;
+    color: var(--success);
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.pricing-setup {
+    text-align: center;
+    padding: 12px;
+    background: var(--gray-100);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+.pricing-card.featured .pricing-setup {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--dark);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .pricing-features {
@@ -836,6 +871,47 @@ p { color: var(--gray-600); }
 .form-group textarea {
     min-height: 120px;
     resize: vertical;
+}
+
+/* WhatsApp Chat CTA */
+.chat-cta {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.chat-icon {
+    margin-bottom: 20px;
+}
+
+.chat-cta h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.chat-cta p {
+    color: var(--gray-400);
+    margin-bottom: 24px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
 }
 
 /* Footer */
@@ -985,8 +1061,28 @@ p { color: var(--gray-600); }
         grid-template-columns: 1fr;
     }
 
+    .pricing-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+    }
+
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .pricing-cards {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .pricing-card.featured {
+        transform: none;
     }
 }
 
