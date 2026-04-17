@@ -984,8 +984,55 @@ p { color: var(--gray-600); }
     color: var(--accent);
 }
 
+.certifications-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.certification-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 24px 20px;
+    width: 220px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.certification-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.certification-img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.certification-card h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.certification-card p {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    line-height: 1.4;
+}
+
 .footer-bottom {
-    padding-top: 30px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: space-between;
@@ -1404,4 +1451,65 @@ p { color: var(--gray-600); }
     .breakthrough-after {
         padding: 20px;
     }
+}
+
+/* Demo tooltip */
+.demo-tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.demo-tooltip {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    white-space: nowrap;
+    z-index: 1000;
+    min-width: 180px;
+}
+
+.demo-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    right: 18px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-left: 1px solid #e2e8f0;
+    border-top: 1px solid #e2e8f0;
+    transform: rotate(45deg);
+}
+
+.demo-tooltip-wrapper:hover .demo-tooltip {
+    display: block;
+}
+
+.demo-tooltip-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+
+.demo-tooltip-row {
+    font-size: 14px;
+    color: #334155;
+    margin-bottom: 4px;
+}
+
+.demo-tooltip-row span {
+    color: #64748b;
+}
+
+.demo-tooltip-row strong {
+    color: #0f172a;
 }
